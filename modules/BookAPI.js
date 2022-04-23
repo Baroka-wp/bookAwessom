@@ -12,7 +12,7 @@ export default class BookAPI {
   }
 
   static getAllBooks() {
-    const books = JSON.parse(localStorage.getItem('booksList')) || BookAPI.getData("/books.json") ;
+    const books = JSON.parse(localStorage.getItem('booksList')) || BookAPI.getData('/books.json');
     return books;
   }
 
