@@ -12,6 +12,7 @@ export default class Header extends HTMLElement {
     this.innerHTML = `
       <header>
         <h1><a class="logo" href="#">Awesome books</a> <i class="fa-solid fa-book-atlas"></i></h1>
+        <p id="date_section"></p>
         <div class="humberger">
           <span class="bar"></span>
           <span class="bar"></span>
