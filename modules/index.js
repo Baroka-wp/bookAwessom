@@ -1,6 +1,7 @@
-import App from './modules/app.js';
-import Header from './modules/componnents/header.js';
-import Footer from './modules/componnents/footer.js';
+import App from './app.js';
+import { DateTime } from './luxon.js';
+import Header from './componnents/header.js';
+import Footer from './componnents/footer.js';
 
 customElements.define('v-header', Header);
 customElements.define('v-footer', Footer);
@@ -35,3 +36,16 @@ document.addEventListener('click', (e) => {
     App.displayContact();
   }
 });
+
+const time = () => {
+  const dataSection = document.querySelector('#date_section');
+  dataSection.textContent = DateTime.now().toLocaleString({
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+};
+
+setInterval(time, 1000);
